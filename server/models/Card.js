@@ -15,6 +15,11 @@ const cardSchema = new mongoose.Schema({
     priority: {
         type: String,
         default: 'Medium'
+    },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 }, {
     timestamps: true

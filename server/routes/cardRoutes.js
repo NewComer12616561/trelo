@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Card = require('../models/Card');
+const auth = require('../middleware/auth');
+
+// Protect all routes with auth middleware
+router.use(auth);
 
 // Get all cards
 router.get('/', async (req, res) => {
